@@ -59,11 +59,11 @@ const Dashboard: React.FC = () => {
         ...food,
       });
 
-      setFoods(
-        foods.map(mappedFood =>
-          mappedFood.id === editingFood.id ? { ...response.data } : mappedFood,
-        ),
+      const updatedFood = foods.map(mappedFood =>
+        mappedFood.id === editingFood.id ? { ...response.data } : mappedFood,
       );
+
+      setFoods(updatedFood);
     } catch (err) {
       console.log(err);
     }
